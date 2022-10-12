@@ -4,10 +4,6 @@ import "../styles/Characters.css"
 import { Search } from "./Search";
 const API = "https://rickandmortyapi.com/api/character";
 
-const initialState = {
-  favorites: [],
-};
-
 
 const Characters = () => {
   
@@ -16,14 +12,16 @@ const Characters = () => {
 
   const characters= useCharacters(API)
 
-
   const handleSearch= useCallback(()=>{
     setSearch(searchInput.current.value)
   },[])
  
   const filteredUsers= useMemo(()=>
     characters.filter((user)=>{
-        return user.name.toLowerCase().includes(search.toLowerCase());
+        return (
+          user.name.toLowerCase().includes(search.toLowerCase()),
+          user.location.name.toLowerCase().includes(search.toLowerCase())
+        );
       }),
       [characters,search]
   )
@@ -39,6 +37,7 @@ const Characters = () => {
     
     <div className="character-container">
       {filteredUsers.map((character) => (
+        
         <div className="character-card" key={character.id} >
           <div className="character-info">
             <p key={character.name}>{character.name}</p>
