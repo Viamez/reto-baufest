@@ -1,51 +1,69 @@
-import React, { useState, useReducer, useMemo, useRef, useCallback } from "react";
+import React, {
+  useState,
+  useReducer,
+  useMemo,
+  useRef,
+  useCallback,
+} from "react";
 import { useCharacters } from "../hooks/useCharacters";
-import "../styles/Characters.css"
+import "../styles/Characters.css";
+import "../styles/Characters2.css";
 import { Search } from "./Search";
-const API = "https://rickandmortyapi.com/api/character";
-
+const APICharacter = "https://rickandmortyapi.com/api/character";
 
 const Characters = () => {
-  
   const [search, setSearch] = useState("");
-  const searchInput = useRef(null)
+  const searchInput = useRef(null);
 
-  const characters= useCharacters(API)
+  const characters = useCharacters(APICharacter);
 
-  const handleSearch= useCallback(()=>{
-    setSearch(searchInput.current.value)
-  },[])
- 
-  const filteredUsers= useMemo(()=>
-    characters.filter((user)=>{
+  const handleSearch = useCallback(() => {
+    setSearch(searchInput.current.value);
+  }, []);
+
+  const filteredUsers = useMemo(
+    () =>
+      characters.filter((user) => {
         return (
-          user.name.toLowerCase().includes(search.toLowerCase()),
+          user.name.toLowerCase().includes(search.toLowerCase()) ||
           user.location.name.toLowerCase().includes(search.toLowerCase())
         );
       }),
-      [characters,search]
-  )
+    [characters, search]
+  );
 
   return (
-    <section className="main-container" >
-     
-    <Search 
-      search={search}
-      searchInput={searchInput}
-      handleSearch={handleSearch}
-    />
-    
-    <div className="character-container">
-      {filteredUsers.map((character) => (
-        
-        <div className="character-card" key={character.id} >
-          <div className="character-info">
-            <p key={character.name}>{character.name}</p>
-          </div>
-          <img src={character.image} key={character.id} />
-         </div>
-      ))}
-      </div>
+    <section className="main-container">
+      <Search
+        search={search}
+        searchInput={searchInput}
+        handleSearch={handleSearch}
+      />
+      {!!search ? (
+        <div className="character-container">
+          {filteredUsers.map((character) => (
+            <div className="character-card" key={character.id}>
+              <div className="character-info">
+                <p key={character.name}>{character.name}</p>
+              </div>
+              <img src={character.image} key={character.id} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="character-container">
+          {filteredUsers.map((character) => (
+            <div className="character-card" key={character.id}>
+              <div className="character-info">
+                <p key={character.name}>{character.name}</p>
+                <p key={character.gender}>{character.gender}</p>
+              </div>
+                <p key={character.location.name}>{character.location.name}</p>
+              <img src={character.image} key={character.id} />
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

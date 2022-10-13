@@ -8,7 +8,7 @@ Queda a criterio del evaluado:
 ## **Enunciado**
 Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, resolver:
 
-## Barra de búsqueda
+## Barra de búsqueda(casi listo)
 Desarrollar una barra de búsqueda que permita realizar consultas por episodios, ubicaciones o personajes. La visualización de resultados debera realizarse por medio de cards
 
 ### Búsqueda por Personaje
@@ -55,3 +55,4 @@ Al realizar una búsqueda por episodios, se debe poder ofrecer un mayor nivel de
   - Un listado de personajes que participaron en el episodio, mostrando nombre e imagen de cada uno
 - La visualización de esta sección queda a criterio del evaluado
 
+  
