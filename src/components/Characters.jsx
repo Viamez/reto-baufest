@@ -43,10 +43,16 @@ const Characters = () => {
         <div className="character-container">
           {filteredUsers.map((character) => (
             <div className="character-card" key={character.id}>
-              <div className="character-info">
-                <p key={character.name}>{character.name}</p>
-              </div>
               <img src={character.image} key={character.id} />
+              <div className="character-info">
+                <div>
+                  <p key={character.name}>{character.name} </p>
+                  <p key={character.gender}>{character.gender}</p>
+                </div>
+                <p className="character-location" key={character.location.name}>
+                  {character.location.name}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -56,9 +62,7 @@ const Characters = () => {
             <div className="character-card" key={character.id}>
               <div className="character-info">
                 <p key={character.name}>{character.name}</p>
-                <p key={character.gender}>{character.gender}</p>
               </div>
-                <p key={character.location.name}>{character.location.name}</p>
               <img src={character.image} key={character.id} />
             </div>
           ))}

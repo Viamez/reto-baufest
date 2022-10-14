@@ -9,8 +9,6 @@
   }
   .character-card {
     width: 240px;
-    padding: 0px;
-    margin: 0;
   }
   .character-card img {
     width: 240px;
@@ -28,6 +26,20 @@
     text-align: left;
     margin-left: 20px;
   }
-  .caja{
-    background-color: black;
+  .character-location{
+    margin: 0;
+    width: 90px;
+    color: rgb(207, 92, 69);
   }
+  .character-info div p:nth-child(1){
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 4px;
+  }
+  .character-info div p:nth-child(2){
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(43, 144, 187);
+  }
+
+  
