@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const useCharacters = (url) => {
+const useApi = (url) => {
   const [date, setDate]= useState([]);
   useEffect(()=>{
     fetch(url)
@@ -10,4 +10,4 @@ const useCharacters = (url) => {
   return date
 }
 
-export {useCharacters}
+export {useApi}
