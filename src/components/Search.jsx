@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/Search.css"
-const Search = ({search, searchInput, handleSearch}) => {
+const Search = ({search, handleSearch}) => {
   return (
     <div >
       <input 
@@ -9,7 +9,6 @@ const Search = ({search, searchInput, handleSearch}) => {
         type='text' 
         value={search} 
         onChange={handleSearch} 
-        ref={searchInput}
       />
      </div>
   )
