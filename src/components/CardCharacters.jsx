@@ -40,7 +40,7 @@ const CardCharacters = () => {
   };
   const [episodesMap, compararCharacters, openModal, setOpenModal] =
     useComparate(comparar);
-  console.log(comparar.comparateList.length)
+
   return (
     <section className="main-container">
       <div className="search-comparate">
@@ -56,15 +56,10 @@ const CardCharacters = () => {
         handleClick={handleClick}
         aleatorio={aleatorio}
       />
-      <div>
-        {comparar.comparateList.length ===1?
-          <div>
-         { comparar.comparateList.forEach((element) => {
-            <p>element.name</p>
-          })}
-            </div>:console.log(comparar.comparateList)
-        }
-      </div>
+      {openModal && (
+        <Modal
+        comparar={comparar} />
+      )}
     </section>
   );
 };

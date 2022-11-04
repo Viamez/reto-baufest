@@ -13,9 +13,8 @@ function useComparate(comparar) {
           const firstSecond = [...firstSet].filter((element) =>
             secondSet.has(element)
           );
-          // console.log(`${datos[0].name} y ${datos[1].name}`, firstSecond);
+          console.log(`${datos[0].name} y ${datos[1].name}`, firstSecond);
           setOpenModal(true)
-          return firstSecond
         } else if (datos.length == 3) {
           const firstSet = new Set(datos[0].episodes);
           const secondSet = new Set(datos[1].episodes);
