@@ -7,6 +7,16 @@
     gap: 26px;
     place-content: center;
   }
+.name-episodes-img p{
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.name-episodes-img :nth-child(2) {
+  font-weight: bold;
+}
+.name-episodes-img :nth-child(3) {
+  color: rgb(47, 216, 214);
+}
 button{
   border-radius: 8px;
     border: none;
@@ -53,7 +63,7 @@ button{
     color: rgb(207, 92, 69);
   }
   .character-info div p:nth-child(1){
-    font-weight: bold;
+    color: rgb(108, 103, 103);
     margin-top: 0px;
     margin-bottom: 4px;
   }
