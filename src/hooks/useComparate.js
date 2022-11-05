@@ -31,8 +31,9 @@ function useComparate(comparar) {
           console.log(`${datos[0].name} y ${datos[1].name}`, firstSecond);
           console.log(`${datos[0].name} y ${datos[2].name}`, firstThird);
           console.log(`${datos[1].name} y ${datos[2].name}`, secondThird);
+          setOpenModal(true)
         } else {
-          console.log("Solo puedes comparar un maximo de 3 personajes");
+          console.log("Debes tener un minimo de 2 personajes para comparar");
         }
       }
       return [episodesMap, compararCharacters, openModal, setOpenModal]

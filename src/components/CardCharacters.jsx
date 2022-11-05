@@ -34,13 +34,13 @@ const CardCharacters = () => {
     characters,
     episodes
   );
-
   const handleClick = (comparative) => {
-    dispatch({ type: "ADD_TO_COMPARATIVE", payload: comparative });
+    if(comparar.comparateList.length <3 && !comparar.comparateList.includes(comparative)){
+      dispatch({ type: "ADD_TO_COMPARATIVE", payload: comparative });
+    }
   };
   const [episodesMap, compararCharacters, openModal, setOpenModal] =
     useComparate(comparar);
-
   return (
     <section className="main-container">
       <div className="search-comparate">
@@ -48,7 +48,6 @@ const CardCharacters = () => {
         <Comparate
           compararCharacters={compararCharacters}
           episodesMap={episodesMap}
-          setOpenModal={setOpenModal}
         />
       </div>
       <Characters
@@ -58,6 +57,7 @@ const CardCharacters = () => {
       />
       {openModal && (
         <Modal
+        setOpenModal={setOpenModal}
         comparar={comparar} />
       )}
     </section>

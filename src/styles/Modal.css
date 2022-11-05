@@ -10,3 +10,25 @@
      align-items: center;
      color: white;
 }
+.CreateTodoButton{
+     background-color: #e50909;
+     border: none;
+     border-radius: 50%;
+     cursor: pointer;
+     font-size: 20px;
+     position: fixed;
+     top: 24px;
+     right: 24px;
+     font-weight: bold;
+     color: #FAFAFA;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 24px;
+     width: 24px;
+     transform: rotate();
+     transition: .3s ease;
+ }
+ .CreateTodoButton:hover{
+     transform: rotate(224deg);
+ }

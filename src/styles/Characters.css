@@ -60,10 +60,10 @@ button{
   .character-location{
     margin: 0;
     width: 90px;
-    color: rgb(207, 92, 69);
+    color: rgb(69, 207, 80);
+    font-weight: bold;
   }
   .character-info div p:nth-child(1){
-    color: rgb(108, 103, 103);
     margin-top: 0px;
     margin-bottom: 4px;
   }
@@ -71,6 +71,11 @@ button{
     margin-top: 0;
     margin-bottom: 0;
     color: rgb(43, 144, 187);
+    font-weight: bold;
+  }
+  .character-info div p:nth-child(3){
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   

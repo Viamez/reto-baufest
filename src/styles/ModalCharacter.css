@@ -1,0 +1,67 @@
+.character-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 26px;
+    place-content: center;
+}
+
+.name-episodes-img p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.name-episodes-img :nth-child(2) {
+    font-weight: bold;
+}
+
+.name-episodes-img :nth-child(3) {
+    color: rgb(47, 216, 214);
+}
+
+.character-card {
+    width: 240px;
+    padding: 5px;
+}
+
+.character-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.character-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.search-character-container {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.character-location {
+    margin: 0;
+    width: 90px;
+    color: rgb(69, 207, 80);
+    font-weight: bold;
+}
+
+.character-info div p:nth-child(1) {
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.character-info div p:nth-child(2) {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(43, 144, 187);
+    font-weight: bold;
+}
+
+.character-info div p:nth-child(3) {
+    margin-top: 0;
+    margin-bottom: 0;
+}
