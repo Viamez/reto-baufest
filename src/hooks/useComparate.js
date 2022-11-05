@@ -13,7 +13,7 @@ function useComparate(comparar) {
           const firstSecond = [...firstSet].filter((element) =>
             secondSet.has(element)
           );
-          console.log(`${datos[0].name} y ${datos[1].name}`, firstSecond);
+          // console.log(`${datos[0].name} y ${datos[1].name}`, firstSecond);
           setOpenModal(true)
         } else if (datos.length == 3) {
           const firstSet = new Set(datos[0].episodes);
@@ -32,9 +32,7 @@ function useComparate(comparar) {
           console.log(`${datos[0].name} y ${datos[2].name}`, firstThird);
           console.log(`${datos[1].name} y ${datos[2].name}`, secondThird);
           setOpenModal(true)
-        } else {
-          console.log("Debes tener un minimo de 2 personajes para comparar");
-        }
+        } 
       }
       return [episodesMap, compararCharacters, openModal, setOpenModal]
 }
