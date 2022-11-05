@@ -1,19 +1,6 @@
-.section-character{
+.section-character {
     display: flex;
     flex-direction: row;
-}
-
-.name-episodes-img p {
-    margin-top: 5px;
-    margin-bottom: 0px;
-}
-
-.name-episodes-img :nth-child(2) {
-    font-weight: bold;
-}
-
-.name-episodes-img :nth-child(3) {
-    color: rgb(47, 216, 214);
 }
 
 .character-card {
@@ -21,45 +8,29 @@
     padding: 5px;
 }
 
-.character-card img {
-    width: 240px;
-    height: 240px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-.character-info {
-    display: flex;
-    justify-content: space-between;
+.episodes-number {
+    border: solid;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    position: fixed;
+    bottom: 15px;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    text-align: center;
+    width: 150px;
+    height: 100px;
 }
 
-.search-character-container {
-    text-align: left;
-    margin-left: 20px;
+.section-character p:nth-child(4) {
+    margin-left: 2%;
 }
 
-.character-location {
-    margin: 0;
-    width: 90px;
-    color: rgb(69, 207, 80);
-    font-weight: bold;
+.section-character p:nth-child(5) {
+    margin-left: 22%;
 }
 
-.character-info div p:nth-child(1) {
-    margin-top: 0px;
-    margin-bottom: 4px;
-}
-
-.character-info div p:nth-child(2) {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: rgb(43, 144, 187);
-    font-weight: bold;
-}
-
-.character-info div p:nth-child(3) {
-    margin-top: 0;
-    margin-bottom: 0;
+.section-character p:nth-child(6) {
+    margin-left: 45%;
 }

@@ -9,7 +9,7 @@ const Comparate = ({compararCharacters, episodesMap}) => {
       onClick={() => compararCharacters(episodesMap)}
       
     >
-      Comparacion
+      Comparar seleccionados
     </button>
   );
 };

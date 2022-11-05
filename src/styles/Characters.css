@@ -17,7 +17,7 @@
 .name-episodes-img :nth-child(3) {
   color: rgb(47, 216, 214);
 }
-button{
+.button-filter{
   border-radius: 8px;
     border: none;
     width: 70px;
@@ -30,6 +30,20 @@ button{
     margin-right: 10px;
   
 }
+.button-Comparate{
+  border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0px;
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: rgb(254, 223, 18);
+  
+}
 .search-comparate{
   display: flex;
   padding: 0 0 20px 14px;
@@ -40,6 +54,7 @@ button{
 } */
   .character-card {
     width: 240px;
+    margin-bottom: 10px;
   }
   .character-card img {
     width: 240px;

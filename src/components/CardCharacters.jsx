@@ -39,7 +39,7 @@ const CardCharacters = () => {
       dispatch({ type: "ADD_TO_COMPARATIVE", payload: comparative });
     }
   };
-  const [episodesMap, compararCharacters, openModal, setOpenModal] =
+  const [episodesMap, compararCharacters, openModal, setOpenModal, firstSecond, firstThird, secondThird] =
     useComparate(comparar);
   return (
     <section className="main-container">
@@ -58,7 +58,12 @@ const CardCharacters = () => {
       {openModal && (
         <Modal
         setOpenModal={setOpenModal}
-        comparar={comparar} />
+        comparar={comparar}
+        firstSecond={firstSecond}
+        firstThird={firstThird}
+        secondThird={secondThird}
+        episodesMap={episodesMap}
+        />
       )}
     </section>
   );
