@@ -80,9 +80,7 @@ function Modal({
             {secondThird.length} episodios
           </p>
         </section>
-      ) : (
-        console.log("hola")
-      )}
+      ) : ''}
     </div>,
     document.getElementById("modal")
   );

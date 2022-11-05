@@ -1,9 +1,7 @@
 import React from "react";
 function useComparate(comparar) {
   const [openModal, setOpenModal] = React.useState(false);
-  function compararCharacters(datos) {
-    setOpenModal(true);
-  }
+  
   let firstSecond = [];
   let firstThird = [];
   let secondThird = [];
@@ -23,6 +21,10 @@ function useComparate(comparar) {
     firstSecond = [...firstSet].filter((element) => secondSet.has(element));
     firstThird = [...firstSet].filter((element) => thirdSet.has(element));
     secondThird = [...secondSet].filter((element) => thirdSet.has(element));
+  }
+  function compararCharacters() {
+    if(episodesMap.length ==2 || episodesMap.length ==3)
+    setOpenModal(true);
   }
   return [
     episodesMap,
