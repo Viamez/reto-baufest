@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-function useCharacter(infoCharacter, episodes) {
+function useCharacter(infoCharacter, episodes, location) {
   const [search, setSearch] = useState("");
   const handleSearch = (event) => setSearch(event.target.value);
+
   infoCharacter.forEach((element) => (element.episodesName = []));
-  infoCharacter.forEach((dato) => {
-    episodes.forEach((element) => {
-      if (dato.episode.includes(element.url)) {
-        dato.episodesName.push(element.name.toLowerCase());
+
+  infoCharacter.forEach((character) => {
+    episodes.forEach((episode) => {
+      if (character.episode.includes(episode.url)) {
+        character.episodesName.push(episode.name.toLowerCase());
       } else {
-        dato.episodesName.push("There is no episode in this season.");
+        character.episodesName.push("There is no episode in this season.");
       }
     });
   });
@@ -17,17 +19,30 @@ function useCharacter(infoCharacter, episodes) {
     const nameCharacter = dato.name
       .toLowerCase()
       .includes(search.toLowerCase());
-    const episodeCharacter = dato.episodesName.includes(search.toLowerCase());
-    const locationCharacter = dato.location.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    return nameCharacter || episodeCharacter || locationCharacter;
+
+    return nameCharacter;
   });
+  const filteredLocation = location.filter((dato) => {
+    const nameLocation = dato.name.toLowerCase().includes(search.toLowerCase());
+    return nameLocation;
+  });
+  const filteredEpisode = episodes.filter((dato) => {
+    const nameEpisode = dato.name.toLowerCase().includes(search.toLowerCase());
+    return nameEpisode;
+  });
+
   const aleatorio = (dato) => {
     return Math.floor(Math.random() * dato.length);
   };
 
-  return [search, handleSearch, filteredDato, aleatorio];
+  return [
+    search,
+    handleSearch,
+    filteredDato,
+    aleatorio,
+    filteredLocation,
+    filteredEpisode,
+  ];
 }
 
 export { useCharacter };

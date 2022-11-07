@@ -3,13 +3,13 @@ import { useApi } from "../hooks/useApi";
 import { useCharacter } from "../hooks/useCharacter";
 import { useComparate } from "../hooks/useComparate";
 import { Modal } from "../Modal";
-import { ViewComparate } from "./ViewComparate";
 import "../styles/Characters.css";
 import { Characters } from "./Characters";
 import { Comparate } from "./Comparate";
 import { Search } from "./Search";
 const APICharacter = "https://rickandmortyapi.com/api/character";
 const APIEpisodes = "https://rickandmortyapi.com/api/episode";
+const APILocation = "https://rickandmortyapi.com/api/location";
 const initialState = {
   comparateList: [],
 };
@@ -28,11 +28,13 @@ const reducer = (state, action) => {
 const CardCharacters = () => {
   const episodes = useApi(APIEpisodes);
   const characters = useApi(APICharacter);
+  const location = useApi(APILocation);
   const [comparar, dispatch] = useReducer(reducer, initialState);
 
-  const [search, handleSearch, filteredDato, aleatorio] = useCharacter(
+  const [search, handleSearch, filteredDato, aleatorio, filteredLocation,filteredEpisode] = useCharacter(
     characters,
-    episodes
+    episodes,
+    location
   );
   const handleClick = (comparative) => {
     if(comparar.comparateList.length <3 && !comparar.comparateList.includes(comparative)){
@@ -52,8 +54,15 @@ const CardCharacters = () => {
       </div>
       <Characters
         filteredDato={filteredDato}
+        filteredLocation={filteredLocation}
         handleClick={handleClick}
         aleatorio={aleatorio}
+        search={search}
+        characters={characters}
+        episodes={episodes}
+        locations={location}
+        filteredEpisode={filteredEpisode}
+
       />
       {openModal && (
         <Modal

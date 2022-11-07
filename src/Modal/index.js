@@ -14,7 +14,6 @@ function Modal({
     setOpenModal(false);
     comparar.comparateList = [];
   };
-
   return ReactDOM.createPortal(
     <div className="Modal">
       <button type="submit" onClick={cerrar} className="CreateTodoButton">
@@ -68,19 +67,28 @@ function Modal({
           ))}
 
           <p className="episodes-number">
-            {episodesMap[0].name} y {episodesMap[1].name} comparten{" "}
-            {firstSecond.length} episodios
+            - {episodesMap[0].name} y {episodesMap[1].name} comparten{" "}
+            {firstSecond.length} episodios <br/>
+            - {episodesMap[0].name} y {episodesMap[2].name} comparten{" "}
+            {firstSecond.length} episodios 
+            
           </p>
           <p className="episodes-number">
-            {episodesMap[1].name} y {episodesMap[2].name} comparten{" "}
-            {firstThird.length} episodios
-          </p>
-          <p className="episodes-number">
-            {episodesMap[2].name} y {episodesMap[0].name} comparten{" "}
+            - {episodesMap[1].name} y {episodesMap[2].name} comparten{" "}
+            {secondThird.length} episodios <br/>
+            - {episodesMap[1].name} y {episodesMap[0].name} comparten{" "}
             {secondThird.length} episodios
           </p>
+          <p className="episodes-number">
+            - {episodesMap[2].name} y {episodesMap[0].name} comparten{" "}
+            {firstThird.length} episodios <br/>
+            - {episodesMap[2].name} y {episodesMap[1].name} comparten{" "}
+            {firstThird.length} episodios
+          </p>
         </section>
-      ) : ''}
+      ) : (
+        ""
+      )}
     </div>,
     document.getElementById("modal")
   );

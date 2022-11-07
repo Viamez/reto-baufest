@@ -6,6 +6,7 @@
 .character-card {
     width: 240px;
     padding: 5px;
+    margin-left: 10px;
 }
 
 .episodes-number {
@@ -25,12 +26,15 @@
 
 .section-character p:nth-child(4) {
     margin-left: 2%;
+    font-size: 12px;
 }
 
 .section-character p:nth-child(5) {
     margin-left: 22%;
+    font-size: 12px;
 }
 
 .section-character p:nth-child(6) {
     margin-left: 45%;
+    font-size: 12px;
 }
