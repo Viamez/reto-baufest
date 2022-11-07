@@ -6,15 +6,19 @@ const Characters = ({
   handleClick,
   aleatorio,
   search,
-  characters,
-  episodes,
-  locations,
   filteredLocation,
   filteredEpisode,
+  setOpenModalInfo,
+  locations,
+  episodes,
+  characters,
 }) => {
   const name = characters.map((element) => element.name.toLowerCase());
   const location = locations.map((element) => element.name.toLowerCase());
   const episode = episodes.map((element) => element.name.toLowerCase());
+   const abrir=()=>{
+    setOpenModalInfo(true)
+  }
   return (
     <div className="character-container">
       {name.includes(search.toLowerCase())
@@ -55,6 +59,9 @@ const Characters = ({
                 <p>{character.air_date} </p>
                 <p>{character.episode} </p>
               </div>
+              <button type="button" className="button-filter" onClick={abrir}>
+                + info
+              </button>
             </div>
           ))
         : filteredDato.map((character) => (
@@ -62,9 +69,6 @@ const Characters = ({
               <div className="name-episodes-img">
                 <img src={character.image} />
                 <p>{character.name} </p>
-                <p>
-                  {character.episodesName[aleatorio(character.episodesName)]}
-                </p>
               </div>
               <div className="character-info">
                 <div>

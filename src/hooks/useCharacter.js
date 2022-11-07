@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-function useCharacter(infoCharacter, episodes, location) {
+function useCharacter(infoCharacter, episodes, locations) {
   const [search, setSearch] = useState("");
   const handleSearch = (event) => setSearch(event.target.value);
-
   infoCharacter.forEach((element) => (element.episodesName = []));
 
   infoCharacter.forEach((character) => {
@@ -16,13 +15,11 @@ function useCharacter(infoCharacter, episodes, location) {
   });
 
   const filteredDato = infoCharacter.filter((dato) => {
-    const nameCharacter = dato.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+    const nameCharacter = dato.name.toLowerCase().includes(search.toLowerCase());
 
     return nameCharacter;
   });
-  const filteredLocation = location.filter((dato) => {
+  const filteredLocation = locations.filter((dato) => {
     const nameLocation = dato.name.toLowerCase().includes(search.toLowerCase());
     return nameLocation;
   });
@@ -42,6 +39,7 @@ function useCharacter(infoCharacter, episodes, location) {
     aleatorio,
     filteredLocation,
     filteredEpisode,
+
   ];
 }
 

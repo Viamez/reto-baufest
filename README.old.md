@@ -8,10 +8,10 @@ Queda a criterio del evaluado:
 ## **Enunciado**
 Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, resolver:
 
-## Barra de búsqueda(casi listo)
+## Barra de búsqueda(listo)
 Desarrollar una barra de búsqueda que permita realizar consultas por episodios, ubicaciones o personajes. La visualización de resultados debera realizarse por medio de cards
 
-### Búsqueda por Personaje
+### Búsqueda por Personaje(listo)
 Mostrar:
 - Nombre
 - Género
@@ -19,7 +19,7 @@ Mostrar:
 - Un episodio en el que haya aparecido (debe variar cada vez que se muestra el personaje)
 - Foto
 
-### Búsqueda por Ubicación
+### Búsqueda por Ubicación(listo)
 Mostrar:
 - Nombre
 - Tipo
@@ -27,13 +27,13 @@ Mostrar:
 - Cantidad de residentes
 - Fecha de creación
 
-### Búsqueda por Episodios
+### Búsqueda por Episodios(listo)
 Mostrar:
 - Nombre
 - Fecha de emisión
 - Código de episodio
 
-## Comparativa de personajes
+## Comparativa de personajes(listo)
 Reutilizando la barra de búsqueda del punto anterior, permitir realizar una comparación entre personajes teniendo en cuenta los siguientes campos:
 - Nombre
 - Género

@@ -1,6 +1,7 @@
 import React from "react";
 function useComparate(comparar) {
   const [openModal, setOpenModal] = React.useState(false);
+  const [openModalInfo, setOpenModalInfo] = React.useState(false);
 
   let firstSecond = [];
   let firstThird = [];
@@ -34,6 +35,8 @@ function useComparate(comparar) {
     firstSecond,
     firstThird,
     secondThird,
+    openModalInfo,
+    setOpenModalInfo
   ];
 }
 
