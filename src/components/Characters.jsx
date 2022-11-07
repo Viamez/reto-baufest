@@ -8,17 +8,15 @@ const Characters = ({
   search,
   filteredLocation,
   filteredEpisode,
-  setOpenModalInfo,
   locations,
   episodes,
   characters,
+  infoEpisode,
 }) => {
   const name = characters.map((element) => element.name.toLowerCase());
   const location = locations.map((element) => element.name.toLowerCase());
   const episode = episodes.map((element) => element.name.toLowerCase());
-   const abrir=()=>{
-    setOpenModalInfo(true)
-  }
+
   return (
     <div className="character-container">
       {name.includes(search.toLowerCase())
@@ -40,26 +38,30 @@ const Characters = ({
             </div>
           ))
         : location.includes(search.toLowerCase())
-        ? filteredLocation.map((character) => (
-            <div className="character-card" key={character.id}>
+        ? filteredLocation.map((location) => (
+            <div className="character-card" key={location.id}>
               <div className="name-episodes-img">
-                <p>{character.name} </p>
-                <p>{character.type} </p>
-                <p>{character.dimension} </p>
-                <p>Cantidad de residentes: {character.residents.length} </p>
-                <p>Creado el: {character.created}</p>
+                <p>{location.name} </p>
+                <p>{location.type} </p>
+                <p>{location.dimension} </p>
+                <p>Cantidad de residentes: {location.residents.length} </p>
+                <p>Creado el: {location.created}</p>
               </div>
             </div>
           ))
         : episode.includes(search.toLowerCase())
-        ? filteredEpisode.map((character) => (
-            <div className="character-card" key={character.id}>
+        ? filteredEpisode.map((info) => (
+            <div className="character-card" key={info.id}>
               <div className="name-episodes-img">
-                <p>{character.name} </p>
-                <p>{character.air_date} </p>
-                <p>{character.episode} </p>
+                <p>{info.name} </p>
+                <p>{info.air_date} </p>
+                <p>{info.episode} </p>
               </div>
-              <button type="button" className="button-filter" onClick={abrir}>
+              <button
+                type="button"
+                className="button-filter"
+                onClick={() => infoEpisode(info)}
+              >
                 + info
               </button>
             </div>
@@ -68,7 +70,7 @@ const Characters = ({
             <div className="character-card" key={character.id}>
               <div className="name-episodes-img">
                 <img src={character.image} />
-                <p>{character.name} </p>
+                <p>{character.name}</p>
               </div>
               <div className="character-info">
                 <div>

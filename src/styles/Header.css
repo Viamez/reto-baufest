@@ -8,16 +8,3 @@
     margin: 0;
     margin-bottom: 20px;
 }
-.button-Header{
-
-    border-radius: 8px;
-    border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 0px;
-    margin-top: 5px;
-    margin-right: 10px;
-}

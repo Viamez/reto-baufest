@@ -1,0 +1,50 @@
+.modal{
+  height: 100%;
+}
+.character-info-modal {
+  display: flex;
+  gap: 26px;
+  place-content: center;
+}
+
+.character-info-modal p {
+  font-size: 12px;
+}
+
+.name-episodes-img-info p {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.name-episodes-img-info :nth-child(2) {
+  font-weight: bold;
+}
+
+.name-episodes-img-info :nth-child(3) {
+  color: rgb(47, 216, 214);
+}
+
+.character-card-info {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.character-card-info img {
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+}
+.character-info-info div p:nth-child(1){
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.character-info-info div p:nth-child(2){
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(43, 144, 187);
+  font-weight: bold;
+}
+.character-info-info div p:nth-child(3){
+  margin-top: 0;
+  margin-bottom: 0;
+}

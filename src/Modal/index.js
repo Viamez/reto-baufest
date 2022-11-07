@@ -16,7 +16,7 @@ function Modal({
   };
   return ReactDOM.createPortal(
     <div className="Modal">
-      <button type="submit" onClick={cerrar} className="CreateTodoButton">
+      <button type="submit" onClick={cerrar} className="CloseButton">
         X
       </button>
 
@@ -40,8 +40,12 @@ function Modal({
               </div>
             </div>
           ))}
-          <p className="episodes-number">
+          <p className="episodes-number1">
             {episodesMap[0].name} y {episodesMap[1].name} comparten{" "}
+            {firstSecond.length} episodios
+          </p>
+          <p className="episodes-number2">
+            {episodesMap[1].name} y {episodesMap[0].name} comparten{" "}
             {firstSecond.length} episodios
           </p>
         </section>

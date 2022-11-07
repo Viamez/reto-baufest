@@ -10,7 +10,7 @@
      align-items: center;
      color: white;
 }
-.CreateTodoButton{
+.CloseButton{
      background-color: #e50909;
      border: none;
      border-radius: 50%;
@@ -29,6 +29,6 @@
      transform: rotate();
      transition: .3s ease;
  }
- .CreateTodoButton:hover{
+ .CloseButton:hover{
      transform: rotate(224deg);
  }

@@ -23,6 +23,35 @@
     width: 150px;
     height: 100px;
 }
+.episodes-number1 {
+    border: solid;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    position: fixed;
+    bottom: 15px;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+}
+.episodes-number2 {
+    border: solid;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    position: fixed;
+    bottom: 15px;
+    font-weight: bold;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+    right: 400px;
+}
 
 .section-character p:nth-child(4) {
     margin-left: 2%;

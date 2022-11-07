@@ -25,7 +25,20 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
+const initialState2 = {
+  infoEpisodeList: [],
+};
+const reducerInfo = (state, action) => {
+  switch (action.type) {
+    case "ADD_TO_InforList":
+      return {
+        ...state,
+        infoEpisodeList: [...state.infoEpisodeList, action.payload],
+      };
+    default:
+      return state;
+  }
+};
 const CardCharacters = () => {
   const episodes = useApi(APIEpisodes);
   const characters = useApi(APICharacter);
@@ -49,7 +62,7 @@ const CardCharacters = () => {
     firstThird,
     secondThird,
     openModalInfo,
-    setOpenModalInfo
+    setOpenModalInfo,
   ] = useComparate(comparar);
   const handleClick = (comparative) => {
     if (
@@ -59,7 +72,17 @@ const CardCharacters = () => {
       dispatch({ type: "ADD_TO_COMPARATIVE", payload: comparative });
     }
   };
- 
+  const [infoAdd, dispatchInfo] = useReducer(reducerInfo, initialState2);
+  const infoEpisode = (data) => {
+    if (
+      infoAdd.infoEpisodeList.length < 1 &&
+      !infoAdd.infoEpisodeList.includes(data)
+    ) 
+      {dispatchInfo({ type: "ADD_TO_InforList", payload: data });
+      setOpenModalInfo(true)}
+  };
+
+
 
   return (
     <section className="main-container">
@@ -80,7 +103,7 @@ const CardCharacters = () => {
         episodes={episodes}
         locations={locations}
         filteredEpisode={filteredEpisode}
-        setOpenModalInfo={setOpenModalInfo}
+        infoEpisode={infoEpisode}
       />
       {openModal && (
         <Modal
@@ -92,15 +115,15 @@ const CardCharacters = () => {
           episodesMap={episodesMap}
         />
       )}
-     
+
       {openModalInfo && (
         <ModalInfo
           setOpenModalInfo={setOpenModalInfo}
           characters={characters}
           search={search}
+          infoAdd={infoAdd}
         />
-        
-        )}
+      )}
     </section>
   );
 };
