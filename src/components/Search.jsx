@@ -5,7 +5,7 @@ const Search = ({search, handleSearch}) => {
     <div >
       <input 
         className="Search-character" 
-        placeholder='Busca tu personaje'
+        placeholder='Busca un personaje'
         type='text' 
         value={search} 
         onChange={handleSearch} 
